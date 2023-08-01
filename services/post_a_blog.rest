@@ -1,8 +1,11 @@
 POST http://localhost:3003/api/blogs
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlVzZXJuYW1lIDUiLCJpZCI6IjY0N2U1MTkyYmRkNGIzYWQyN2E0OTJlYiIsImlhdCI6MTY4NjAwNzQ2OH0.72CFtP9yH0o16eLwcrx30zDsnl_2sygLL6CM0hjp9sE
 
 {
-    "title": "Sixth",
+    "title": "Unauthored bloggg",
     "author": "Book Author",
-    "url": "www.whatever.com"
+    "url": "www.whatever.com",
+    "likes": 5,
+    "userId": "647e5192bdd4b3ad27a492eb"
 }

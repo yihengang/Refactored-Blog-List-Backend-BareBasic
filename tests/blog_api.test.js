@@ -22,7 +22,7 @@ test("get all notes in JSON format", async () => {
     .get("/api/blogs")
     .expect("Content-Type", /application\/json/);
 
-  expect(response.body).toHaveLength(initialBlogs.length);
+  expect(response.body).toHaveLength(helper.initialBlogs.length);
 });
 
 test("has _id property", async () => {
@@ -54,7 +54,7 @@ test("posted blog exists in blog list", async () => {
   const blogList = await api.get("/api/blogs");
   const titlesOnly = blogList.body.map((b) => b.title);
   console.log(blogList.body);
-  expect(blogList.body.length).toEqual(initialBlogs.length + 1);
+  expect(blogList.body.length).toEqual(helper.initialBlogs.length + 1);
   expect(titlesOnly).toContain("newBlog");
 });
 
@@ -75,7 +75,7 @@ test("posted blog without likes property defaults to value 0", async () => {
   const blogList = await api.get("/api/blogs");
   const titlesOnly = blogList.body.map((b) => b.title);
   console.log(blogList.body);
-  expect(blogList.body.length).toEqual(initialBlogs.length + 1);
+  expect(blogList.body.length).toEqual(helper.initialBlogs.length + 1);
   expect(blogList.body[3].likes).toEqual(0);
   expect(titlesOnly).toContain("newBlog");
 });
@@ -116,7 +116,7 @@ test("Deleted blog should no longer exist", async () => {
   expect(remainingTitles).not.toContain("React patterns");
 });
 
-test.only("Updated blog", async () => {
+test("Updated blog", async () => {
   //drag out the id to be updated
   const startingBlogs = await api.get("/api/blogs");
   const blogsId = startingBlogs.body[0].id;
