@@ -1,4 +1,4 @@
-initialBlogs = [
+const initialBlogs = [
   {
     title: "React patterns",
     author: "Michael Chan",
@@ -16,6 +16,21 @@ initialBlogs = [
     author: "Edsger W. Dijkstra",
     url: "http://www.cs.utexas.edu/~EWD/transcriptions/EWD08xx/EWD808.html",
     likes: 12,
+  },
+];
+
+const initialUsers = [
+  {
+    username: "Username 1",
+    name: "Name 1",
+  },
+  {
+    username: "Username 2",
+    name: "Name 2",
+  },
+  {
+    username: "Username 3",
+    name: "Name 3",
   },
 ];
 
@@ -38,4 +53,4 @@ const blogsInDb = async () => {
   return blogs.map((blog) => blog.toJson());
 };
 
-module.exports = { initialBlogs, nonExistingId, blogsInDb };
+module.exports = { initialBlogs, initialUsers, nonExistingId, blogsInDb };

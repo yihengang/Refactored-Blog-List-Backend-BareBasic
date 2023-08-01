@@ -5,5 +5,5 @@ Content-Type: application/json
     "title": "Boruto",
     "author": "Kishi",
     "url": "www.boruto.com",
-    "likes": 5
+    "likes": 6
 }
